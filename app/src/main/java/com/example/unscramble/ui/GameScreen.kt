@@ -80,6 +80,8 @@ fun GameScreen(
             style = typography.titleLarge,
         )
         GameLayout(
+            onUsersGuessChanged = { gameViewModel.updateUserGuess(it) },
+            onKeyboardDone = {},
             currentScrambledWord = gameUiState.currentScrambledWord,
             modifier = Modifier
                 .fillMaxWidth()
