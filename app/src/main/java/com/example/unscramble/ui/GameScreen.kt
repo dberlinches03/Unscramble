@@ -82,6 +82,7 @@ fun GameScreen(
         GameLayout(
             onUsersGuessChanged = { gameViewModel.updateUserGuess(it) },
             onKeyboardDone = {},
+            userGuess = gameViewModel.userGuess,
             currentScrambledWord = gameUiState.currentScrambledWord,
             modifier = Modifier
                 .fillMaxWidth()
@@ -139,7 +140,8 @@ fun GameLayout(
     onUsersGuessChanged: (String) -> Unit,
     onKeyboardDone: () -> Unit,
     currentScrambledWord: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    userGuess: String
 ) {
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
 
