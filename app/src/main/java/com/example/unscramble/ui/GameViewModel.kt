@@ -47,6 +47,15 @@ class GameViewModel : ViewModel () {
 
 
 
+    fun checkUserGuess() {
+
+        if (userGuess.equals(currentWord, ignoreCase = true)) {
+        } else {
+        }
+        // Reset user guess
+        updateUserGuess("")
+    }
+
     fun resetGame() {
         usedWords.clear()
         _uiState.value = GameUiState(currentScrambledWord = pickRandomWordAndShuffle())
